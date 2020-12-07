@@ -98,7 +98,7 @@
 <li class="toctree-l4"><a class="reference internal" href="exoscale.api.html">exoscale.api package</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-exoscale">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -190,8 +190,122 @@
 </ul>
 </div>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-exoscale">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-exoscale" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="exoscale.ConfigurationError">
+<em class="property">exception </em><code class="sig-prename descclassname">exoscale.</code><code class="sig-name descname">ConfigurationError</code><a class="headerlink" href="#exoscale.ConfigurationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>A generic configuration error.</p>
+<dl class="attribute">
+<dt id="exoscale.ConfigurationError.reason">
+<code class="sig-name descname">reason</code><em class="property"> = _CountingAttr(counter=244, _default=NOTHING, repr=True, eq=True, order=True, hash=None, init=True, metadata={})</em><a class="headerlink" href="#exoscale.ConfigurationError.reason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.Exoscale">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.</code><code class="sig-name descname">Exoscale</code><span class="sig-paren">(</span><em class="sig-param">config_file=None</em>, <em class="sig-param">profile=None</em>, <em class="sig-param">api_key=None</em>, <em class="sig-param">api_secret=None</em>, <em class="sig-param">compute_api_endpoint=None</em>, <em class="sig-param">dns_api_endpoint=None</em>, <em class="sig-param">storage_api_endpoint=None</em>, <em class="sig-param">storage_zone=None</em>, <em class="sig-param">runstatus_api_endpoint=None</em>, <em class="sig-param">iam_api_endpoint=None</em>, <em class="sig-param">max_retries=3</em>, <em class="sig-param">trace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.Exoscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An Exoscale API client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_file</strong> (<em>str</em>) – path to a configuration file</p></li>
+<li><p><strong>profile</strong> (<em>str</em>) – a configuration profile name</p></li>
+<li><p><strong>api_key</strong> (<em>str</em>) – an Exoscale client API key</p></li>
+<li><p><strong>api_secret</strong> (<em>str</em>) – an Exoscale client API secret</p></li>
+<li><p><strong>compute_api_endpoint</strong> (<em>str</em>) – an alternative Exoscale Compute API endpoint</p></li>
+<li><p><strong>dns_api_endpoint</strong> (<em>str</em>) – an alternative Exoscale DNS API endpoint</p></li>
+<li><p><strong>storage_api_endpoint</strong> (<em>str</em>) – an alternative Exoscale Object Storage API endpoint</p></li>
+<li><p><strong>iam_api_endpoint</strong> (<em>str</em>) – an alternative Exoscale IAM API endpoint</p></li>
+<li><p><strong>storage_zone</strong> (<em>str</em>) – an Exoscale Storage zone</p></li>
+<li><p><strong>runstatus_api_endpoint</strong> (<em>str</em>) – an alternative Exoscale Runstatus API endpoint</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em>) – the API HTTP session retry policy number of retries to allow</p></li>
+<li><p><strong>trace</strong> (<em>bool</em>) – API requests/responses tracing flag</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="exoscale.Exoscale.api_key">
+<code class="sig-name descname">api_key</code><a class="headerlink" href="#exoscale.Exoscale.api_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale client API key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.api_secret">
+<code class="sig-name descname">api_secret</code><a class="headerlink" href="#exoscale.Exoscale.api_secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale client API secret</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.compute">
+<code class="sig-name descname">compute</code><a class="headerlink" href="#exoscale.Exoscale.compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale Compute API client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exoscale.api.compute.html#exoscale.api.compute.ComputeAPI" title="exoscale.api.compute.ComputeAPI">api.compute.ComputeAPI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.dns">
+<code class="sig-name descname">dns</code><a class="headerlink" href="#exoscale.Exoscale.dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale DNS API client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>api.compute.DnsAPI</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.storage">
+<code class="sig-name descname">storage</code><a class="headerlink" href="#exoscale.Exoscale.storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale Object Storage API client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exoscale.api.storage.html#exoscale.api.storage.StorageAPI" title="exoscale.api.storage.StorageAPI">api.storage.StorageAPI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.runstatus">
+<code class="sig-name descname">runstatus</code><a class="headerlink" href="#exoscale.Exoscale.runstatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale Runstatus API client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exoscale.api.runstatus.html#exoscale.api.runstatus.RunstatusAPI" title="exoscale.api.runstatus.RunstatusAPI">api.runstatus.RunstatusAPI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.Exoscale.iam">
+<code class="sig-name descname">iam</code><a class="headerlink" href="#exoscale.Exoscale.iam" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Exoscale IAM API client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exoscale.api.iam.html#exoscale.api.iam.IamAPI" title="exoscale.api.iam.IamAPI">api.iam.IamAPI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 

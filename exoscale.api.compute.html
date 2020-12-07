@@ -98,7 +98,7 @@
 <li class="toctree-l4 current"><a class="reference internal" href="exoscale.api.html">exoscale.api package</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="exoscale.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exoscale.html#module-exoscale">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -173,8 +173,2940 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="exoscale-api-compute-module">
-<h1>exoscale.api.compute module<a class="headerlink" href="#exoscale-api-compute-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-exoscale.api.compute">
+<span id="exoscale-api-compute-module"></span><h1>exoscale.api.compute module<a class="headerlink" href="#module-exoscale.api.compute" title="Permalink to this headline">¶</a></h1>
+<p>This submodule represents the Exoscale Compute API.</p>
+<dl class="class">
+<dt id="exoscale.api.compute.AntiAffinityGroup">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">AntiAffinityGroup</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.AntiAffinityGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>An Anti-Affinity Group.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.AntiAffinityGroup.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.AntiAffinityGroup.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Anti-Affinity Group unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.AntiAffinityGroup.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.AntiAffinityGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Anti-Affinity Group display name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.AntiAffinityGroup.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.AntiAffinityGroup.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Anti-Affinity Group description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.AntiAffinityGroup.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.AntiAffinityGroup.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Anti-Affinity Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.ComputeAPI">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">ComputeAPI</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">secret</em>, <em class="sig-param">endpoint='https://api.exoscale.com/v1'</em>, <em class="sig-param">environment='api'</em>, <em class="sig-param">max_retries=None</em>, <em class="sig-param">trace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.API" title="exoscale.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.API</span></code></a></p>
+<p>An Exoscale Compute API client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – the Compute API key</p></li>
+<li><p><strong>secret</strong> (<em>str</em>) – the Compute API secret</p></li>
+<li><p><strong>endpoint</strong> (<em>str</em>) – the Compute API endpoint</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em>) – the API HTTP session retry policy number of retries to allow</p></li>
+<li><p><strong>trace</strong> (<em>bool</em>) – API request/response tracing flag</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_anti_affinity_group">
+<code class="sig-name descname">create_anti_affinity_group</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_anti_affinity_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an Anti-Affinity Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Anti-Affinity Group name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – the Anti-Affinity Group description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Anti-Affinity Group created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.AntiAffinityGroup" title="exoscale.api.compute.AntiAffinityGroup">AntiAffinityGroup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_elastic_ip">
+<code class="sig-name descname">create_elastic_ip</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">description=None</em>, <em class="sig-param">healthcheck_mode=None</em>, <em class="sig-param">healthcheck_port=None</em>, <em class="sig-param">healthcheck_path='/'</em>, <em class="sig-param">healthcheck_interval=10</em>, <em class="sig-param">healthcheck_timeout=2</em>, <em class="sig-param">healthcheck_strikes_ok=3</em>, <em class="sig-param">healthcheck_strikes_fail=2</em>, <em class="sig-param">healthcheck_tls_sni=None</em>, <em class="sig-param">healthcheck_tls_skip_verify=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_elastic_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an Elastic IP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which to create the Elastic IP</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – an Elastic IP description</p></li>
+<li><p><strong>healthcheck_mode</strong> (<em>str</em>) – optional healthcheck mode</p></li>
+<li><p><strong>healthcheck_port</strong> (<em>int</em>) – healthcheck port,
+required if healthchecking is enabled</p></li>
+<li><p><strong>healthcheck_path</strong> (<em>str</em>) – healthcheck probe HTTP request path,
+required in “http” mode</p></li>
+<li><p><strong>healthcheck_interval</strong> (<em>int</em>) – probe interval in seconds</p></li>
+<li><p><strong>healthcheck_timeout</strong> (<em>int</em>) – time in seconds before
+considering a probe failed, must be lower than interval</p></li>
+<li><p><strong>healthcheck_strikes_ok</strong> (<em>int</em>) – number of successful probes
+before considering the target healthy</p></li>
+<li><p><strong>healthcheck_strikes_fail</strong> (<em>int</em>) – number of unsuccessful probes
+before considering the target unhealthy</p></li>
+<li><p><strong>healthcheck_tls_sni</strong> (<em>str</em>) – the TLS SNI domain to present for HTTPS
+healthchecks</p></li>
+<li><p><strong>healthcheck_tls_skip_verify</strong> (<em>bool</em>) – whether to skip TLS certificate
+validation for HTTPS healthchecks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Elastic IP created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.ElasticIP" title="exoscale.api.compute.ElasticIP">ElasticIP</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_instance">
+<code class="sig-name descname">create_instance</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">zone</em>, <em class="sig-param">type</em>, <em class="sig-param">template</em>, <em class="sig-param">volume_size=10</em>, <em class="sig-param">security_groups=None</em>, <em class="sig-param">anti_affinity_groups=None</em>, <em class="sig-param">private_networks=None</em>, <em class="sig-param">enable_ipv6=False</em>, <em class="sig-param">ssh_key=None</em>, <em class="sig-param">user_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Compute instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the name of the instance</p></li>
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which to create the Compute instance</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType"><em>InstanceType</em></a>) – the instance type</p></li>
+<li><p><strong>template</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate"><em>InstanceTemplate</em></a>) – the instance template</p></li>
+<li><p><strong>volume_size</strong> (<em>int</em>) – the instance storage volume size in GB</p></li>
+<li><p><strong>security_groups</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup"><em>SecurityGroup</em></a><em>]</em>) – a list of Security Groups to attach
+the instance to</p></li>
+<li><p><strong>anti_affinity_groups</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.AntiAffinityGroup" title="exoscale.api.compute.AntiAffinityGroup"><em>AntiAffinityGroup</em></a><em>]</em>) – a list of Anti-Affinity Groups
+to place the instance into</p></li>
+<li><p><strong>private_networks</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork"><em>PrivateNetwork</em></a><em>]</em>) – a list of Private Networks to attach
+the instance to</p></li>
+<li><p><strong>enable_ipv6</strong> (<em>bool</em>) – a flag indicating whether to enable IPv6 on the public
+network interface</p></li>
+<li><p><strong>ssh_key</strong> (<a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey"><em>SSHKey</em></a>) – a SSH Key to deploy on the instance</p></li>
+<li><p><strong>user_data</strong> (<em>str</em>) – a cloud-init user data configuration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Compute instance created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance">Instance</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_instance_pool">
+<code class="sig-name descname">create_instance_pool</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name</em>, <em class="sig-param">size</em>, <em class="sig-param">instance_type</em>, <em class="sig-param">instance_template</em>, <em class="sig-param">instance_volume_size=10</em>, <em class="sig-param">instance_security_groups=None</em>, <em class="sig-param">instance_private_networks=None</em>, <em class="sig-param">instance_ssh_key=None</em>, <em class="sig-param">instance_user_data=None</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_instance_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Compute Instance Pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which to create the Instance Pool</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the name of the Instance Pool</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – a description of the Instance Pool</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – the number of Compute instance members the pool must manage</p></li>
+<li><p><strong>instance_type</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType"><em>InstanceType</em></a>) – the Compute instance members type</p></li>
+<li><p><strong>instance_template</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate"><em>InstanceTemplate</em></a>) – the Compute instance template to use
+for members</p></li>
+<li><p><strong>instance_volume_size</strong> (<em>int</em>) – the Compute instance members storage volume
+size in GB</p></li>
+<li><p><strong>instance_private_networks</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork"><em>PrivateNetwork</em></a><em>]</em>) – a list of Private Networks to
+attach the Compute instance members to</p></li>
+<li><p><strong>instance_security_groups</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup"><em>SecurityGroup</em></a><em>]</em>) – a list of Security Groups to
+attach the Compute instance members to</p></li>
+<li><p><strong>instance_ssh_key</strong> (<a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey"><em>SSHKey</em></a>) – a SSH Key to deploy on the Compute instance
+members</p></li>
+<li><p><strong>instance_user_data</strong> (<em>str</em>) – a cloud-init user data configuration to apply to
+the Compute instance members</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Compute Instance Pool created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstancePool" title="exoscale.api.compute.InstancePool">InstancePool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_network_load_balancer">
+<code class="sig-name descname">create_network_load_balancer</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_network_load_balancer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which to create the Network Load Balancer</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the Network Load Balancer name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – the Network Load Balancer description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Network Load Balancer created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.NetworkLoadBalancer" title="exoscale.api.compute.NetworkLoadBalancer">NetworkLoadBalancer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_private_network">
+<code class="sig-name descname">create_private_network</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name</em>, <em class="sig-param">description=''</em>, <em class="sig-param">start_ip=None</em>, <em class="sig-param">end_ip=None</em>, <em class="sig-param">netmask=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_private_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which to create the Private Network</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the Private Network name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – the Private Network description</p></li>
+<li><p><strong>start_ip</strong> (<em>str</em>) – the network IP range start address for managed
+Private Networks</p></li>
+<li><p><strong>end_ip</strong> (<em>str</em>) – the network IP range end address for managed
+Private Networks</p></li>
+<li><p><strong>netmask</strong> (<em>str</em>) – the network IP netmask for managed Private Networks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Private Network created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork">PrivateNetwork</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_security_group">
+<code class="sig-name descname">create_security_group</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_security_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Security group name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – the Security Group description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Security Group created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup">SecurityGroup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.create_ssh_key">
+<code class="sig-name descname">create_ssh_key</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.create_ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an SSH key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – the SSH key unique name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the SSH key created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey">SSHKey</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_anti_affinity_group">
+<code class="sig-name descname">get_anti_affinity_group</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_anti_affinity_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an Anti-Affinity Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – an Anti-Affinity Group identifier</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – an Anti-Affinity Group name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an Anti-Affinity Group</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.AntiAffinityGroup" title="exoscale.api.compute.AntiAffinityGroup">AntiAffinityGroup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_elastic_ip">
+<code class="sig-name descname">get_elastic_ip</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">address=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_elastic_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve an Elastic IP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to retrieve from</p></li>
+<li><p><strong>address</strong> (<em>str</em>) – an Elastic IP address</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – an Elastic IP identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an Elastic IP</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.ElasticIP" title="exoscale.api.compute.ElasticIP">ElasticIP</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_instance">
+<code class="sig-name descname">get_instance</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">id=None</em>, <em class="sig-param">ip_address=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Compute instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to retrieve from</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – an instance identifier</p></li>
+<li><p><strong>ip_address</strong> (<em>str</em>) – an instance IP address</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Compute instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance">Instance</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ip_address</span></code> parameter is a Compute instance’s <em>primary</em> IP address,
+not an Elastic IP.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_instance_pool">
+<code class="sig-name descname">get_instance_pool</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_instance_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an Instance Pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone in which the Instance Pool is located in</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – an Instance Pool identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an Instance Pool</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstancePool" title="exoscale.api.compute.InstancePool">InstancePool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_instance_template">
+<code class="sig-name descname">get_instance_template</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_instance_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an instance template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to retrieve from</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – an instance template identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an instance template</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate">InstanceTemplate</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_instance_type">
+<code class="sig-name descname">get_instance_type</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_instance_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Compute instance type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – an instance type name</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – an instance type identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Compute instance type</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType">InstanceType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_network_load_balancer">
+<code class="sig-name descname">get_network_load_balancer</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_network_load_balancer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – a Network Load Balancer name</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – a Network Load Balancer unique identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Network Load Balancer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.NetworkLoadBalancer" title="exoscale.api.compute.NetworkLoadBalancer">NetworkLoadBalancer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_private_network">
+<code class="sig-name descname">get_private_network</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_private_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to retrieve from</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – a Private Network identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Private Network</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork">PrivateNetwork</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_security_group">
+<code class="sig-name descname">get_security_group</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_security_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – a Security Group name</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – a Security Group identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Security Group</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup">SecurityGroup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_ssh_key">
+<code class="sig-name descname">get_ssh_key</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an SSH Key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – an SSH Key name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an SSH Key</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey">SSHKey</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.get_zone">
+<code class="sig-name descname">get_zone</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.get_zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a zone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – a zone name</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – a zone identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a zone</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_anti_affinity_groups">
+<code class="sig-name descname">list_anti_affinity_groups</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_anti_affinity_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Anti-Affinity Groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>AntiAffinityGroup</em> – the next Anti-Affinity Group</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_elastic_ips">
+<code class="sig-name descname">list_elastic_ips</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_elastic_ips" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Elastic IPs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to list in</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>ElasticIP</em> – the next Elastic IP</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_instance_pools">
+<code class="sig-name descname">list_instance_pools</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_instance_pools" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Compute Instance Pools.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – a zone to restrict results to</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>InstancePool</em> – the next Compute Instance Pool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_instance_templates">
+<code class="sig-name descname">list_instance_templates</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name=None</em>, <em class="sig-param">type='exoscale'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_instance_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>List instance templates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to list in</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – an instance template name to restrict results to</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – an instance template type to restrict results to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>InstanceTemplate</em> – the next instance template</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_instance_types">
+<code class="sig-name descname">list_instance_types</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_instance_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Compute instance types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>InstanceType</em> – the next instance type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_instances">
+<code class="sig-name descname">list_instances</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">name=None</em>, <em class="sig-param">ids=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Compute instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to list in</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – an Instance name to restrict results to</p></li>
+<li><p><strong>ids</strong> (<em>[</em><em>str</em><em>]</em>) – a list of Instance IDs to restrict results to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>Instance</em> – the next Compute instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_network_load_balancers">
+<code class="sig-name descname">list_network_load_balancers</code><span class="sig-paren">(</span><em class="sig-param">zone</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_network_load_balancers" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Network Load Balancers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to list in</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>NetworkLoadBalancer</em> – the next Network Load Balancer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_private_networks">
+<code class="sig-name descname">list_private_networks</code><span class="sig-paren">(</span><em class="sig-param">zone</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_private_networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Private Networks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>zone</strong> (<a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone"><em>Zone</em></a>) – the zone to list in</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><em>PrivateNetwork</em> – the next Private Network</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_security_groups">
+<code class="sig-name descname">list_security_groups</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_security_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Security Groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>SecurityGroup</em> – the next Security Group</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_ssh_keys">
+<code class="sig-name descname">list_ssh_keys</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_ssh_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>List SSH keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>SSHKey</em> – the next SSH key</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.list_zones">
+<code class="sig-name descname">list_zones</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.list_zones" title="Permalink to this definition">¶</a></dt>
+<dd><p>List zones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>Zone</em> – the next zone</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.register_instance_template">
+<code class="sig-name descname">register_instance_template</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">url</em>, <em class="sig-param">checksum</em>, <em class="sig-param">zone</em>, <em class="sig-param">description=None</em>, <em class="sig-param">username=None</em>, <em class="sig-param">disable_ssh_key=False</em>, <em class="sig-param">disable_password_reset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.register_instance_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a custom instance template.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance template name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>an instance template description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>the URL at which to find the instance template disk image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.checksum">
+<code class="sig-name descname">checksum</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.checksum" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance template disk image MD5 checksum</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.username">
+<code class="sig-name descname">username</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>an username to log into Compute instances using this
+template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.disable_ssh_key">
+<code class="sig-name descname">disable_ssh_key</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.disable_ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>a flag indicating whether to disable SSH key
+installation during Compute instance creation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ComputeAPI.disable_password_reset">
+<code class="sig-name descname">disable_password_reset</code><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.disable_password_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>a flag indicating whether to disable
+Compute instance password reset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ComputeAPI.register_ssh_key">
+<code class="sig-name descname">register_ssh_key</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">public_key</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ComputeAPI.register_ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an existing SSH key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the SSH Key unique name</p></li>
+<li><p><strong>public_key</strong> (<em>str</em>) – the SSH public key to register</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the SSH key created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey">SSHKey</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.ElasticIP">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">ElasticIP</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">zone</em>, <em class="sig-param">address</em>, <em class="sig-param">description=None</em>, <em class="sig-param">healthcheck_mode=None</em>, <em class="sig-param">healthcheck_port=None</em>, <em class="sig-param">healthcheck_path=None</em>, <em class="sig-param">healthcheck_interval=None</em>, <em class="sig-param">healthcheck_timeout=None</em>, <em class="sig-param">healthcheck_strikes_ok=None</em>, <em class="sig-param">healthcheck_strikes_fail=None</em>, <em class="sig-param">healthcheck_tls_sni=None</em>, <em class="sig-param">healthcheck_tls_skip_verify=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>An Elastic IP.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Elastic IP unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the Elastic IP is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.address">
+<code class="sig-name descname">address</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Elastic IP address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Elastic IP description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_mode">
+<code class="sig-name descname">healthcheck_mode</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probing mode (tcp|http|https)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_port">
+<code class="sig-name descname">healthcheck_port</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck service port to probe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_path">
+<code class="sig-name descname">healthcheck_path</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probe HTTP request path (must be
+specified in http(s) mode)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_interval">
+<code class="sig-name descname">healthcheck_interval</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probing interval in seconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_timeout">
+<code class="sig-name descname">healthcheck_timeout</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>the time in seconds before considering a healthcheck
+probing failed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_strikes_ok">
+<code class="sig-name descname">healthcheck_strikes_ok</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_strikes_ok" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of successful healthcheck probes before
+considering the target healthy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_strikes_fail">
+<code class="sig-name descname">healthcheck_strikes_fail</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_strikes_fail" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of unsuccessful healthcheck probes
+before considering the target unhealthy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_tls_sni">
+<code class="sig-name descname">healthcheck_tls_sni</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_tls_sni" title="Permalink to this definition">¶</a></dt>
+<dd><p>the TLS SNI domain to present for HTTPS healthchecks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.ElasticIP.healthcheck_tls_skip_verify">
+<code class="sig-name descname">healthcheck_tls_skip_verify</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.healthcheck_tls_skip_verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether to skip TLS certificate validation
+for HTTPS healthchecks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.attach_instance">
+<code class="sig-name descname">attach_instance</code><span class="sig-paren">(</span><em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.attach_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach the Elastic IP to a Compute instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instance</strong> (<a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance"><em>Instance</em></a>) – the instance to attach the Elastic IP to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">detach_instances=False</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Elastic IP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>detach_instances</strong> (<em>bool</em>) – a flag indicating whether to detach the Elastic
+IP from the instances before deleting it</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.detach_instance">
+<code class="sig-name descname">detach_instance</code><span class="sig-paren">(</span><em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.detach_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detach the Elastic IP from a Compute instance it is attached to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instance</strong> (<a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance"><em>Instance</em></a>) – the instance to detach the Elastic IP from</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.instances">
+<em class="property">property </em><code class="sig-name descname">instances</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instances the Elastic IP is attached to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>Instance</em> – the next instance the Elastic IP is attached to</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.reverse_dns">
+<em class="property">property </em><code class="sig-name descname">reverse_dns</code><a class="headerlink" href="#exoscale.api.compute.ElasticIP.reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>The reverse DNS currently set on the Elastic IP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reverse DNS record, or None if none set</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.set_reverse_dns">
+<code class="sig-name descname">set_reverse_dns</code><span class="sig-paren">(</span><em class="sig-param">record</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.set_reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Elastic IP address reverse DNS record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>str</em>) – the reverse DNS record to set</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.unset_reverse_dns">
+<code class="sig-name descname">unset_reverse_dns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.unset_reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unset the Elastic IP address reverse DNS record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.ElasticIP.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">description=None</em>, <em class="sig-param">healthcheck_mode=None</em>, <em class="sig-param">healthcheck_port=None</em>, <em class="sig-param">healthcheck_path=None</em>, <em class="sig-param">healthcheck_interval=None</em>, <em class="sig-param">healthcheck_timeout=None</em>, <em class="sig-param">healthcheck_strikes_ok=None</em>, <em class="sig-param">healthcheck_strikes_fail=None</em>, <em class="sig-param">healthcheck_tls_sni=None</em>, <em class="sig-param">healthcheck_tls_skip_verify=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.ElasticIP.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Elastic IP properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<em>str</em>) – the Elastic IP description</p></li>
+<li><p><strong>healthcheck_mode</strong> (<em>str</em>) – the healthcheck probing mode (must be either “tcp”
+or “http”)</p></li>
+<li><p><strong>healthcheck_port</strong> (<em>int</em>) – the healthcheck service port to probe</p></li>
+<li><p><strong>healthcheck_path</strong> (<em>str</em>) – the healthcheck probe HTTP request path (must be
+specified in http mode)</p></li>
+<li><p><strong>healthcheck_interval</strong> (<em>int</em>) – the healthcheck probing interval in seconds</p></li>
+<li><p><strong>healthcheck_timeout</strong> (<em>int</em>) – the time in seconds before considering a
+healthcheck probing failed</p></li>
+<li><p><strong>healthcheck_strikes_ok</strong> (<em>int</em>) – the number of successful healthcheck probes
+before considering the target healthy</p></li>
+<li><p><strong>healthcheck_strikes_fail</strong> (<em>int</em>) – the number of unsuccessful healthcheck
+probes before considering the target unhealthy</p></li>
+<li><p><strong>healthcheck_tls_sni</strong> (<em>bool</em>) – the TLS SNI domain to present for HTTPS
+healthchecks</p></li>
+<li><p><strong>healthcheck_tls_skip_verify</strong> (<em>bool</em>) – whether to skip TLS certificate
+validation for HTTPS healthchecks</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.Instance">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">Instance</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">creation_date</em>, <em class="sig-param">zone</em>, <em class="sig-param">type</em>, <em class="sig-param">template</em>, <em class="sig-param">volume_id</em>, <em class="sig-param">volume_size</em>, <em class="sig-param">ipv4_address</em>, <em class="sig-param">ipv6_address=None</em>, <em class="sig-param">ssh_key=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Compute instance.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.Instance.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.Instance.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance hostname/display name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.creation_date">
+<code class="sig-name descname">creation_date</code><a class="headerlink" href="#exoscale.api.compute.Instance.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance creation date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.Instance.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the instance is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#exoscale.api.compute.Instance.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType">InstanceType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.template">
+<code class="sig-name descname">template</code><a class="headerlink" href="#exoscale.api.compute.Instance.template" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate">InstanceTemplate</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.volume_size">
+<code class="sig-name descname">volume_size</code><a class="headerlink" href="#exoscale.api.compute.Instance.volume_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance storage volume capacity in bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.ipv4_address">
+<code class="sig-name descname">ipv4_address</code><a class="headerlink" href="#exoscale.api.compute.Instance.ipv4_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance public network interface IP address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.ipv6_address">
+<code class="sig-name descname">ipv6_address</code><a class="headerlink" href="#exoscale.api.compute.Instance.ipv6_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance public network interface IPv6 address,
+or None if IPv6 is not enabled</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Instance.ssh_key">
+<code class="sig-name descname">ssh_key</code><a class="headerlink" href="#exoscale.api.compute.Instance.ssh_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>the SSH key installed in the instance user account,</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SSHKey" title="exoscale.api.compute.SSHKey">SSHKey</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">or None if no SSH key specified during instance creation</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.anti_affinity_groups">
+<em class="property">property </em><code class="sig-name descname">anti_affinity_groups</code><a class="headerlink" href="#exoscale.api.compute.Instance.anti_affinity_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Anti-Affinity Groups the instance is member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>AntiAffinityGroup</em> – the next Anti-Affinity Group the instance is member of</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.attach_elastic_ip">
+<code class="sig-name descname">attach_elastic_ip</code><span class="sig-paren">(</span><em class="sig-param">elastic_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.attach_elastic_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach an Elastic IP to the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>elastic_ip</strong> (<a class="reference internal" href="#exoscale.api.compute.ElasticIP" title="exoscale.api.compute.ElasticIP"><em>ElasticIP</em></a>) – the Elastic IP to attach</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.attach_private_network">
+<code class="sig-name descname">attach_private_network</code><span class="sig-paren">(</span><em class="sig-param">private_network</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.attach_private_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach the instance to a Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>private_network</strong> (<a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork"><em>PrivateNetwork</em></a>) – the Private Network to attach to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.detach_elastic_ip">
+<code class="sig-name descname">detach_elastic_ip</code><span class="sig-paren">(</span><em class="sig-param">elastic_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.detach_elastic_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detach an Elastic IP from the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>elastic_ip</strong> (<a class="reference internal" href="#exoscale.api.compute.ElasticIP" title="exoscale.api.compute.ElasticIP"><em>ElasticIP</em></a>) – the Elastic IP to detach</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.detach_private_network">
+<code class="sig-name descname">detach_private_network</code><span class="sig-paren">(</span><em class="sig-param">private_network</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.detach_private_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detach the instance from a Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>private_network</strong> (<a class="reference internal" href="#exoscale.api.compute.PrivateNetwork" title="exoscale.api.compute.PrivateNetwork"><em>PrivateNetwork</em></a>) – the Private Network to detach from</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.elastic_ips">
+<em class="property">property </em><code class="sig-name descname">elastic_ips</code><a class="headerlink" href="#exoscale.api.compute.Instance.elastic_ips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Elastic IPs attached to the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>ElasticIP</em> – the next Elastic IP attached to the instance</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.instance_pool">
+<em class="property">property </em><code class="sig-name descname">instance_pool</code><a class="headerlink" href="#exoscale.api.compute.Instance.instance_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance Pool the instance is a member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Instance Pool the instance is member of</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#exoscale.api.compute.InstancePool" title="exoscale.api.compute.InstancePool">InstancePool</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.private_networks">
+<em class="property">property </em><code class="sig-name descname">private_networks</code><a class="headerlink" href="#exoscale.api.compute.Instance.private_networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private Networks the instance is member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>PrivateNetwork</em> – the next Private Network the instance is member of</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.reboot">
+<code class="sig-name descname">reboot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.reboot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reboot a running instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.resize_volume">
+<code class="sig-name descname">resize_volume</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.resize_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize the instance storage volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – new instance storage volume size in GB (must be greater than
+current size)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.reverse_dns">
+<em class="property">property </em><code class="sig-name descname">reverse_dns</code><a class="headerlink" href="#exoscale.api.compute.Instance.reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>The reverse DNS currently set on the public network interface IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reverse DNS record, or None if none set</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">type</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the instance type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType"><em>InstanceType</em></a>) – the type to scale the instance to</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.security_groups">
+<em class="property">property </em><code class="sig-name descname">security_groups</code><a class="headerlink" href="#exoscale.api.compute.Instance.security_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Security Groups the instance is member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>SecurityGroup</em> – the next Security Group the instance is member of</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.set_reverse_dns">
+<code class="sig-name descname">set_reverse_dns</code><span class="sig-paren">(</span><em class="sig-param">record</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.set_reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the public network interface IP address reverse DNS record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>str</em>) – the reverse DNS record to set</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.snapshot_volume">
+<code class="sig-name descname">snapshot_volume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.snapshot_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a snapshot of the instance storage volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the instance storage volume snapshot taken</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#exoscale.api.compute.InstanceVolumeSnapshot" title="exoscale.api.compute.InstanceVolumeSnapshot">InstanceVolumeSnapshot</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a stopped instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.state">
+<em class="property">property </em><code class="sig-name descname">state</code><a class="headerlink" href="#exoscale.api.compute.Instance.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current instance state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop a running instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.unset_reverse_dns">
+<code class="sig-name descname">unset_reverse_dns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.unset_reverse_dns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unset the public network interface IP address reverse DNS record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">security_groups=None</em>, <em class="sig-param">user_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Instance.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the instance properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – an instance hostname/display name</p></li>
+<li><p><strong>security_groups</strong> (<em>[</em><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup"><em>SecurityGroup</em></a><em>]</em>) – a list of Security Groups the instance
+is member of</p></li>
+<li><p><strong>user_data</strong> (<em>str</em>) – a cloud-init user data configuration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.Instance.volume_snapshots">
+<em class="property">property </em><code class="sig-name descname">volume_snapshots</code><a class="headerlink" href="#exoscale.api.compute.Instance.volume_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Snapshots of the instance storage volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>InstanceVolumeSnapshot</em> – the next instance storage volume snapshot</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.InstancePool">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">InstancePool</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">zone</em>, <em class="sig-param">size</em>, <em class="sig-param">instance_type</em>, <em class="sig-param">instance_template</em>, <em class="sig-param">instance_user_data</em>, <em class="sig-param">instance_volume_size</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstancePool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Compute Instance Pool.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Instance Pool unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Instance Pool name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Instance Pool description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the Instance Pool is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of Compute instance members the Instance Pool manages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.instance_type">
+<code class="sig-name descname">instance_type</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.instance_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>the type of instances managed by this instance
+pool</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceType" title="exoscale.api.compute.InstanceType">InstanceType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.instance_template">
+<code class="sig-name descname">instance_template</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.instance_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template to be used when this instance
+pool creates new instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate">InstanceTemplate</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.instance_user_data">
+<code class="sig-name descname">instance_user_data</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.instance_user_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base64-encoded instances user
+data, when the Instance Pool creates new instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate">InstanceTemplate</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstancePool.instance_volume_size">
+<code class="sig-name descname">instance_volume_size</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.instance_volume_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>the storage volume capacity in bytes to set when
+this Instance Pool creates new instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">wait=True</em>, <em class="sig-param">max_poll=300</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstancePool.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Instance Pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.instances">
+<em class="property">property </em><code class="sig-name descname">instances</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pool instance members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>Instance</em> – the next instance managed by this pool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.private_networks">
+<em class="property">property </em><code class="sig-name descname">private_networks</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.private_networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private Networks the instances are member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>PrivateNetwork</em> – the next Private Network the instances are member of</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstancePool.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the Instance Pool up or down.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – the number of Compute instance members the pool must manage</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.state">
+<em class="property">property </em><code class="sig-name descname">state</code><a class="headerlink" href="#exoscale.api.compute.InstancePool.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the Instance Pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current Instance Pool state.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstancePool.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">description=None</em>, <em class="sig-param">instance_template=None</em>, <em class="sig-param">instance_volume_size=None</em>, <em class="sig-param">instance_user_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstancePool.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Instance Pool properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – an Instance Pool name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – an Instance Pool description</p></li>
+<li><p><strong>instance_template</strong> (<a class="reference internal" href="#exoscale.api.compute.InstanceTemplate" title="exoscale.api.compute.InstanceTemplate"><em>InstanceTemplate</em></a>) – an instance template to use for
+Compute instance members</p></li>
+<li><p><strong>instance_volume_size</strong> (<em>int</em>) – the Compute instance members storage volume
+size in GB</p></li>
+<li><p><strong>instance_user_data</strong> (<em>str</em>) – a cloud-init user data configuration to apply to
+the Compute instance members</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.InstanceTemplate">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">InstanceTemplate</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">description</em>, <em class="sig-param">zone</em>, <em class="sig-param">date</em>, <em class="sig-param">size</em>, <em class="sig-param">ssh_key_enabled=True</em>, <em class="sig-param">password_reset_enabled=True</em>, <em class="sig-param">username=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Compute instance template.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the template is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.date">
+<code class="sig-name descname">date</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.date" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template creation date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template disk size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.ssh_key_enabled">
+<code class="sig-name descname">ssh_key_enabled</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.ssh_key_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>a flag indicating whether the SSH key deployment is
+enabled</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceTemplate.password_reset_enabled">
+<code class="sig-name descname">password_reset_enabled</code><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.password_reset_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>a flag indicating whether the user password can
+be reset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html">Python datetime module</a></p></li>
+</ul>
+<dl class="method">
+<dt id="exoscale.api.compute.InstanceTemplate.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceTemplate.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the instance template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.InstanceType">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">InstanceType</code><span class="sig-paren">(</span><em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">cpu</em>, <em class="sig-param">memory</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Compute instance type.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceType.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.InstanceType.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance type unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceType.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.InstanceType.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance type name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceType.cpu">
+<code class="sig-name descname">cpu</code><a class="headerlink" href="#exoscale.api.compute.InstanceType.cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of vCPU allocated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceType.memory">
+<code class="sig-name descname">memory</code><a class="headerlink" href="#exoscale.api.compute.InstanceType.memory" title="Permalink to this definition">¶</a></dt>
+<dd><p>the amount of RAM allocated in MB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">InstanceVolumeSnapshot</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">date</em>, <em class="sig-param">size</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Compute instance storage volume snapshot.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance storage volume snapshot unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.date">
+<code class="sig-name descname">date</code><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.date" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance storage volume snapshot creation date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>the instance storage volume snapshot size in bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html">Python datetime module</a></p></li>
+</ul>
+<dl class="method">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the storage volume snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.export">
+<code class="sig-name descname">export</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports the storage volume snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the exported snapshot file properties (URL, checksum…)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.revert">
+<code class="sig-name descname">revert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.revert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Revert the storage volume snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.InstanceVolumeSnapshot.state">
+<em class="property">property </em><code class="sig-name descname">state</code><a class="headerlink" href="#exoscale.api.compute.InstanceVolumeSnapshot.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the instance storage volume snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current instance storage volume snapshot state.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.NetworkLoadBalancer">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">NetworkLoadBalancer</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">creation_date</em>, <em class="sig-param">ip_address</em>, <em class="sig-param">zone</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Network Load Balancer.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>a Network Load Balancer description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.creation_date">
+<code class="sig-name descname">creation_date</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer creation date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.ip_address">
+<code class="sig-name descname">ip_address</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.ip_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer public IP address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the Network Load Balancer is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.add_service">
+<code class="sig-name descname">add_service</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">instance_pool</em>, <em class="sig-param">port</em>, <em class="sig-param">healthcheck_interval</em>, <em class="sig-param">protocol='tcp'</em>, <em class="sig-param">description=''</em>, <em class="sig-param">target_port=None</em>, <em class="sig-param">strategy='round-robin'</em>, <em class="sig-param">healthcheck_mode='tcp'</em>, <em class="sig-param">healthcheck_port=None</em>, <em class="sig-param">healthcheck_uri=None</em>, <em class="sig-param">healthcheck_timeout=None</em>, <em class="sig-param">healthcheck_retries=None</em>, <em class="sig-param">healthcheck_tls_sni=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.add_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new service to the Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Network Load Balancer service name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – a Network Load Balancer service description</p></li>
+<li><p><strong>instance_pool</strong> (<a class="reference internal" href="#exoscale.api.compute.InstancePool" title="exoscale.api.compute.InstancePool"><em>InstancePool</em></a>) – the Instance Pool to forward the Network Load
+Balancer service traffic to</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – the Network Load Balancer service port</p></li>
+<li><p><strong>target_port</strong> (<em>port</em>) – the port to forward the Network Load Balancer service
+traffic to</p></li>
+<li><p><strong>protocol</strong> (<em>str</em>) – the Network Load Balancer service protocol (tcp|udp)</p></li>
+<li><p><strong>strategy</strong> (<em>str</em>) – the Network Load Balancer service dispatch strategy
+(round-robin|source-hash)</p></li>
+<li><p><strong>healtcheck_mode</strong> (<em>str</em>) – the healthcheck probing mode (tcp|http|https)</p></li>
+<li><p><strong>healtcheck_port</strong> (<em>int</em>) – the healthcheck service port to probe</p></li>
+<li><p><strong>healtcheck_uri</strong> (<em>str</em>) – the healthcheck probe HTTP request path (must be
+specified in http(s) mode)</p></li>
+<li><p><strong>healthcheck_interval</strong> (<em>int</em>) – the healthcheck probing interval in seconds</p></li>
+<li><p><strong>healthcheck_timeout</strong> (<em>int</em>) – the time in seconds before considering a
+healthcheck probing failed</p></li>
+<li><p><strong>healthcheck_retries</strong> (<em>int</em>) – the number of times to retry a failed
+healthchecking probe before marking the target as failing</p></li>
+<li><p><strong>healthcheck_tls_sni</strong> (<em>str</em>) – the TLS SNI domain to present for HTTPS
+healthchecks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the Network Load Balancer service added.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.NetworkLoadBalancerService" title="exoscale.api.compute.NetworkLoadBalancerService">NetworkLoadBalancerService</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.services">
+<em class="property">property </em><code class="sig-name descname">services</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Services running on the Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>NetworkLoadBalancerService</em> – the next Network Load Balancer service</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.state">
+<em class="property">property </em><code class="sig-name descname">state</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the Network Load Balancer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current Network Load Balancer state.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancer.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancer.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Network Load Balancer properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Network Load Balancer name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – the Network Load Balancer description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">NetworkLoadBalancerService</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">nlb</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">instance_pool</em>, <em class="sig-param">port</em>, <em class="sig-param">target_port</em>, <em class="sig-param">protocol</em>, <em class="sig-param">strategy</em>, <em class="sig-param">healthcheck</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Network Load Balancer service.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.nlb">
+<code class="sig-name descname">nlb</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.nlb" title="Permalink to this definition">¶</a></dt>
+<dd><p>the parent Network Load Balancer instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.NetworkLoadBalancer" title="exoscale.api.compute.NetworkLoadBalancer">NetworkLoadBalancer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer service uniquer identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer service name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>a Network Load Balancer service description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.instance_pool">
+<code class="sig-name descname">instance_pool</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.instance_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Instance Pool to forward the Network Load
+Balancer service traffic to</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.InstancePool" title="exoscale.api.compute.InstancePool">InstancePool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer service port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.target_port">
+<code class="sig-name descname">target_port</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.target_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>the port to forward the Network Load Balancer service
+traffic to</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>port</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.protocol">
+<code class="sig-name descname">protocol</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer service protocol (tcp|udp)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.strategy">
+<code class="sig-name descname">strategy</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer service dispatch strategy
+(round-robin|source-hash)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.healthcheck">
+<code class="sig-name descname">healthcheck</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.healthcheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Network Load Balancer
+service healthcheck</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck" title="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck">NetworkLoadBalancerServiceHealthcheck</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Network Load Balancer service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.healthcheck_status">
+<em class="property">property </em><code class="sig-name descname">healthcheck_status</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.healthcheck_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status of the Network Load Balancer service healthcheck.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>the current Network Load Balancer service healthcheck status,</dt><dd><p>a list of dicts containing keys “public-ip” and “status”.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[dict]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.state">
+<em class="property">property </em><code class="sig-name descname">state</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the Network Load Balancer service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current Network Load Balancer service state.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.NetworkLoadBalancerService.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">description=None</em>, <em class="sig-param">port=None</em>, <em class="sig-param">target_port=None</em>, <em class="sig-param">protocol=None</em>, <em class="sig-param">strategy=None</em>, <em class="sig-param">healthcheck_mode=None</em>, <em class="sig-param">healthcheck_port=None</em>, <em class="sig-param">healthcheck_uri=None</em>, <em class="sig-param">healthcheck_interval=None</em>, <em class="sig-param">healthcheck_timeout=None</em>, <em class="sig-param">healthcheck_retries=None</em>, <em class="sig-param">healthcheck_tls_sni=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerService.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Network Load Balancer service properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the Network Load Balancer service name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – a Network Load Balancer service description</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – the Network Load Balancer service port</p></li>
+<li><p><strong>target_port</strong> (<em>port</em>) – the port to forward the Network Load Balancer service
+traffic to</p></li>
+<li><p><strong>protocol</strong> (<em>str</em>) – the Network Load Balancer service protocol (tcp|udp)</p></li>
+<li><p><strong>strategy</strong> (<em>str</em>) – the Network Load Balancer service dispatch strategy
+(round-robin|source-hash)</p></li>
+<li><p><strong>healtcheck_mode</strong> (<em>str</em>) – the healthcheck probing mode (tcp|http|https)</p></li>
+<li><p><strong>healtcheck_port</strong> (<em>int</em>) – the healthcheck service port to probe</p></li>
+<li><p><strong>healtcheck_uri</strong> (<em>str</em>) – the healthcheck probe HTTP request path (must be
+specified in http(s) mode)</p></li>
+<li><p><strong>healthcheck_interval</strong> (<em>int</em>) – the healthcheck probing interval in seconds</p></li>
+<li><p><strong>healthcheck_timeout</strong> (<em>int</em>) – the time in seconds before considering a
+healthcheck probing failed</p></li>
+<li><p><strong>healthcheck_retries</strong> (<em>int</em>) – the number of times to retry a failed
+healthchecking probe before marking the target as failing</p></li>
+<li><p><strong>healthcheck_tls_sni</strong> (<em>str</em>) – the TLS SNI domain to present for HTTPS
+healthchecks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">NetworkLoadBalancerServiceHealthcheck</code><span class="sig-paren">(</span><em class="sig-param">res</em>, <em class="sig-param">mode</em>, <em class="sig-param">port</em>, <em class="sig-param">uri=None</em>, <em class="sig-param">interval=None</em>, <em class="sig-param">timeout=None</em>, <em class="sig-param">retries=None</em>, <em class="sig-param">tls_sni=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Network Load Balancer service healthcheck.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.mode">
+<code class="sig-name descname">mode</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probing mode (tcp|http|https)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck service port to probe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.uri">
+<code class="sig-name descname">uri</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.uri" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probe HTTP request path (must be specified in http(s)
+mode)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.interval">
+<code class="sig-name descname">interval</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>the healthcheck probing interval in seconds</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.timeout">
+<code class="sig-name descname">timeout</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>the time in seconds before considering a healthcheck
+probing failed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.retries">
+<code class="sig-name descname">retries</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.retries" title="Permalink to this definition">¶</a></dt>
+<dd><p>the number of times to retry a failed healthchecking probe before
+marking the target as failing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.tls_sni">
+<code class="sig-name descname">tls_sni</code><a class="headerlink" href="#exoscale.api.compute.NetworkLoadBalancerServiceHealthcheck.tls_sni" title="Permalink to this definition">¶</a></dt>
+<dd><p>the TLS SNI domain to present for HTTPS healthchecks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.PrivateNetwork">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">PrivateNetwork</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">zone</em>, <em class="sig-param">description=''</em>, <em class="sig-param">start_ip=None</em>, <em class="sig-param">end_ip=None</em>, <em class="sig-param">netmask=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Private Network.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Private Network unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Private Network name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Private Network description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.zone">
+<code class="sig-name descname">zone</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone in which the Private Network is located</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.Zone" title="exoscale.api.compute.Zone">Zone</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.start_ip">
+<code class="sig-name descname">start_ip</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.start_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>the start address of the managed Private Network IP range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.end_ip">
+<code class="sig-name descname">end_ip</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.end_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>the end address of the managed Private Network IP range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.PrivateNetwork.netmask">
+<code class="sig-name descname">netmask</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.netmask" title="Permalink to this definition">¶</a></dt>
+<dd><p>the managed Private Network IP range netmask</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_ip</span></code>, <code class="docutils literal notranslate"><span class="pre">end_ip</span></code> and <code class="docutils literal notranslate"><span class="pre">netmask</span></code> attributes are required in
+“managed” mode.</p>
+</div>
+<dl class="method">
+<dt id="exoscale.api.compute.PrivateNetwork.attach_instance">
+<code class="sig-name descname">attach_instance</code><span class="sig-paren">(</span><em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.attach_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach a Compute instance to the Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instance</strong> (<a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance"><em>Instance</em></a>) – the instance to attach</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.PrivateNetwork.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.PrivateNetwork.detach_instance">
+<code class="sig-name descname">detach_instance</code><span class="sig-paren">(</span><em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.detach_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detach a Compute instance from the Private Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instances</strong> (<a class="reference internal" href="#exoscale.api.compute.Instance" title="exoscale.api.compute.Instance"><em>Instance</em></a>) – the instance to detach</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.PrivateNetwork.instances">
+<em class="property">property </em><code class="sig-name descname">instances</code><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private Network instance members.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>Instance</em> – the next Private Network instance member</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.PrivateNetwork.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">description=None</em>, <em class="sig-param">start_ip=None</em>, <em class="sig-param">end_ip=None</em>, <em class="sig-param">netmask=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.PrivateNetwork.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the Private Network properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – a Private Network name</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – a Private Network description</p></li>
+<li><p><strong>start_ip</strong> (<em>str</em>) – a start address of the managed Private Network IP range</p></li>
+<li><p><strong>end_ip</strong> (<em>str</em>) – an end address of the managed Private Network IP range</p></li>
+<li><p><strong>netmask</strong> (<em>str</em>) – a managed Private Network IP range netmask</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.SSHKey">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">SSHKey</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">name</em>, <em class="sig-param">fingerprint</em>, <em class="sig-param">private_key=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SSHKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A SSH key.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.SSHKey.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.SSHKey.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the SSH key unique name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SSHKey.fingerprint">
+<code class="sig-name descname">fingerprint</code><a class="headerlink" href="#exoscale.api.compute.SSHKey.fingerprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>the SSH key fingerprint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SSHKey.private_key">
+<code class="sig-name descname">private_key</code><a class="headerlink" href="#exoscale.api.compute.SSHKey.private_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>the SSH private key, or None if registered SSH key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SSHKey.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SSHKey.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the SSH key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.SecurityGroup">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">SecurityGroup</code><span class="sig-paren">(</span><em class="sig-param">compute</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">description=''</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A Security Group.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroup.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroup.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroup.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroup.add_rule">
+<code class="sig-name descname">add_rule</code><span class="sig-paren">(</span><em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.add_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a rule to the Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rule</strong> (<a class="reference internal" href="#exoscale.api.compute.SecurityGroupRule" title="exoscale.api.compute.SecurityGroupRule"><em>SecurityGroupRule</em></a>) – the Security Group rule to add</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroup.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroup.egress_rules">
+<em class="property">property </em><code class="sig-name descname">egress_rules</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.egress_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Egress rules of the Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>SecurityGroupRule</em> – the next egress rule of the Security Group</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroup.ingress_rules">
+<em class="property">property </em><code class="sig-name descname">ingress_rules</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroup.ingress_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ingress rules of the Security Group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>SecurityGroupRule</em> – the next ingress rule of the Security Group</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.SecurityGroupRule">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">SecurityGroupRule</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">compute=None</em>, <em class="sig-param">id=None</em>, <em class="sig-param">description=None</em>, <em class="sig-param">network_cidr=None</em>, <em class="sig-param">security_group=None</em>, <em class="sig-param">port=None</em>, <em class="sig-param">protocol='tcp'</em>, <em class="sig-param">icmp_code=None</em>, <em class="sig-param">icmp_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Security Group rule.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group rule unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group rule type (ingress or egress)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>the Security Group rule description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.network_cidr">
+<code class="sig-name descname">network_cidr</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.network_cidr" title="Permalink to this definition">¶</a></dt>
+<dd><p>a source/destination network CIDR to match
+(conflicts with security_group)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.security_group">
+<code class="sig-name descname">security_group</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.security_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>a source/destination Security Group to match
+(conflicts with network_cidr)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.compute.SecurityGroup" title="exoscale.api.compute.SecurityGroup">SecurityGroup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>the source/destination port or port range to match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.protocol">
+<code class="sig-name descname">protocol</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>a network protocol to match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.icmp_code">
+<code class="sig-name descname">icmp_code</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.icmp_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>an ICMP code to match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.SecurityGroupRule.icmp_type">
+<code class="sig-name descname">icmp_type</code><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.icmp_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>an ICMP type to match</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroupRule.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the Security Group rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroupRule.egress">
+<em class="property">classmethod </em><code class="sig-name descname">egress</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.egress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an egress-type SecurityGroupRule object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an egress-type Security Group rule</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#exoscale.api.compute.SecurityGroupRule" title="exoscale.api.compute.SecurityGroupRule">SecurityGroupRule</a></p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="#exoscale.api.compute.SecurityGroupRule">SecurityGroupRule</a> class
+documentation for parameters.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.compute.SecurityGroupRule.ingress">
+<em class="property">classmethod </em><code class="sig-name descname">ingress</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.SecurityGroupRule.ingress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an ingress-type SecurityGroupRule object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an ingress-type Security Group rule</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#exoscale.api.compute.SecurityGroupRule" title="exoscale.api.compute.SecurityGroupRule">SecurityGroupRule</a></p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="#exoscale.api.compute.SecurityGroupRule">SecurityGroupRule</a> class
+documentation for parameters.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.compute.Zone">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.compute.</code><code class="sig-name descname">Zone</code><span class="sig-paren">(</span><em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.compute.Zone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>An Exoscale zone.</p>
+<dl class="attribute">
+<dt id="exoscale.api.compute.Zone.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.compute.Zone.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.compute.Zone.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.compute.Zone.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the zone name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
