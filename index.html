@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>python-exoscale library documentation &mdash; python-exoscale 2020-12-07 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration" href="configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #da291c" >
+          
+
+          
+            <a href="#">
+          
+
+          
+            
+            <img src="_static/logo-exoscale-white-201711.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-12-07
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">python-exoscale</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>python-exoscale library documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-exoscale-library-documentation">
+<h1>python-exoscale library documentation<a class="headerlink" href="#python-exoscale-library-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This library allows developpers to use the <a class="reference external" href="https://www.exoscale.com/">Exoscale</a> cloud platform API
+with high-level Python bindings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This library is compatible with Python 3.6+ only.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#class-parameters">Class parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#environment-variables">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#compute-api">Compute API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#dns-api">DNS API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#storage-api">Storage API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#runstatus-api">Runstatus API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exoscale.html">exoscale package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exoscale.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="exoscale.api.html">exoscale.api package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="exoscale.api.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="exoscale.api.compute.html">exoscale.api.compute module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="exoscale.api.dns.html">exoscale.api.dns module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="exoscale.api.iam.html">exoscale.api.iam module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="exoscale.api.runstatus.html">exoscale.api.runstatus module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="exoscale.api.storage.html">exoscale.api.storage module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="exoscale.api.html#module-exoscale.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="exoscale.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>0.4.0 (2020-12-07)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="features">
+<h4>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>compute: add support for Network Load Balancers</p></li>
+<li><p>compute: add support for Elastic IP HTTPS health checking</p></li>
+<li><p>compute: add support for snapshot exporting</p></li>
+</ul>
+</div>
+<div class="section" id="changes">
+<h4>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>compute: <cite>get_instance_pool()</cite> arguments order</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>0.3.0 (2020-01-22)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="new">
+<h4>New<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Add support for IAM (<code class="docutils literal notranslate"><span class="pre">iam</span></code> submodule)</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h4>Features<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Allow HTTP session retry policy to be user configurable</p></li>
+<li><p>compute: add support for Instance Pools</p></li>
+<li><p>compute: add support for Elastic IP descriptions</p></li>
+<li><p>compute: add Instance <code class="docutils literal notranslate"><span class="pre">creation_date</span></code> attribute</p></li>
+</ul>
+</div>
+<div class="section" id="fixes">
+<h4>Fixes<a class="headerlink" href="#fixes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>storage: fix failing integration tests</p></li>
+<li><p>storage: honor global client settings</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>0.2.0 (2019-10-09)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Features<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>storage: add Bucket/BucketFile <code class="docutils literal notranslate"><span class="pre">url</span></code> attribute</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>Fixes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>compute: fix unhandled exception in <code class="docutils literal notranslate"><span class="pre">get_*</span></code> functions</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h4>Changes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">create_instance()</span></code> function <em>root_disk_size</em> parameter has been renamed
+to <em>volume_size</em></p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">get_elastic_ip()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">get_instance_template()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">get_instance()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">get_private_network()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">list_elastic_ips()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">list_instance_templates()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">list_instances()</span></code> function now requires a <em>zone</em> parameter</p></li>
+<li><p>compute: <code class="docutils literal notranslate"><span class="pre">list_private_networks()</span></code> function now requires a <em>zone</em> parameter</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>0.1.1 (2019-09-12)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Initial release</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2020, The Exoscale team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

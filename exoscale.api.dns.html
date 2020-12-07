@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>exoscale.api.dns module &mdash; python-exoscale 2020-12-07 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="exoscale.api.iam module" href="exoscale.api.iam.html" />
+    <link rel="prev" title="exoscale.api.compute module" href="exoscale.api.compute.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #da291c" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo-exoscale-white-201711.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-12-07
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="exoscale.html">exoscale package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="exoscale.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="exoscale.api.html">exoscale.api package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="exoscale.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python-exoscale</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">API</a> &raquo;</li>
+        
+          <li><a href="exoscale.html">exoscale package</a> &raquo;</li>
+        
+          <li><a href="exoscale.api.html">exoscale.api package</a> &raquo;</li>
+        
+      <li>exoscale.api.dns module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/exoscale.api.dns.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-exoscale.api.dns">
+<span id="exoscale-api-dns-module"></span><h1>exoscale.api.dns module<a class="headerlink" href="#module-exoscale.api.dns" title="Permalink to this headline">¶</a></h1>
+<p>This submodule represents the Exoscale DNS API.</p>
+<dl class="class">
+<dt id="exoscale.api.dns.DnsAPI">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.dns.</code><code class="sig-name descname">DnsAPI</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">secret</em>, <em class="sig-param">endpoint='https://api.exoscale.com/v1'</em>, <em class="sig-param">max_retries=None</em>, <em class="sig-param">trace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DnsAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.API" title="exoscale.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.API</span></code></a></p>
+<p>An Exoscale DNS API client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – the DNS API key</p></li>
+<li><p><strong>secret</strong> (<em>str</em>) – the DNS API secret</p></li>
+<li><p><strong>endpoint</strong> (<em>str</em>) – the DNS API endpoint</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em>) – the API HTTP session retry policy number of retries to allow</p></li>
+<li><p><strong>trace</strong> (<em>bool</em>) – API request/response tracing flag</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="exoscale.api.dns.DnsAPI.create_domain">
+<code class="sig-name descname">create_domain</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DnsAPI.create_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a DNS domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – the domain name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the DNS domain created</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.dns.Domain" title="exoscale.api.dns.Domain">Domain</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.DnsAPI.get_domain">
+<code class="sig-name descname">get_domain</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DnsAPI.get_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a DNS domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – a DNS domain identifier</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – a DNS domain name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a DNS domain</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.dns.Domain" title="exoscale.api.dns.Domain">Domain</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.DnsAPI.list_domains">
+<code class="sig-name descname">list_domains</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DnsAPI.list_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>List DNS domains.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>Domain</em> – the next DNS domain</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.dns.Domain">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.dns.</code><code class="sig-name descname">Domain</code><span class="sig-paren">(</span><em class="sig-param">dns</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">name</em>, <em class="sig-param">unicode_name</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.Domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A DNS domain.</p>
+<dl class="attribute">
+<dt id="exoscale.api.dns.Domain.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.dns.Domain.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.Domain.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.dns.Domain.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.Domain.add_record">
+<code class="sig-name descname">add_record</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">type</em>, <em class="sig-param">content</em>, <em class="sig-param">priority=None</em>, <em class="sig-param">ttl=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.Domain.add_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a record to the DNS domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the DNS domain record name</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – the DNS domain record type</p></li>
+<li><p><strong>content</strong> (<em>str</em>) – the DNS domain record content</p></li>
+<li><p><strong>priority</strong> (<em>int</em>) – the DNS domain record priority</p></li>
+<li><p><strong>ttl</strong> (<em>int</em>) – the DNS domain record TTL</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.Domain.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.Domain.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the DNS domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.Domain.records">
+<em class="property">property </em><code class="sig-name descname">records</code><a class="headerlink" href="#exoscale.api.dns.Domain.records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Domain records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><p><em>DomainRecord</em> – the next DNS domain record defined</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This property value is dynamically retrieved from the API, incurring extra
+latency.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="exoscale.api.dns.DomainRecord">
+<em class="property">class </em><code class="sig-prename descclassname">exoscale.api.dns.</code><code class="sig-name descname">DomainRecord</code><span class="sig-paren">(</span><em class="sig-param">dns</em>, <em class="sig-param">res</em>, <em class="sig-param">id</em>, <em class="sig-param">domain</em>, <em class="sig-param">type</em>, <em class="sig-param">name</em>, <em class="sig-param">content</em>, <em class="sig-param">priority=None</em>, <em class="sig-param">ttl=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DomainRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="exoscale.api.html#exoscale.api.Resource" title="exoscale.api.Resource"><code class="xref py py-class docutils literal notranslate"><span class="pre">exoscale.api.Resource</span></code></a></p>
+<p>A DNS domain record.</p>
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record unique identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.domain">
+<code class="sig-name descname">domain</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain the record belongs to</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exoscale.api.dns.Domain" title="exoscale.api.dns.Domain">Domain</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.content">
+<code class="sig-name descname">content</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record content</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.priority">
+<code class="sig-name descname">priority</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record priority</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="exoscale.api.dns.DomainRecord.ttl">
+<code class="sig-name descname">ttl</code><a class="headerlink" href="#exoscale.api.dns.DomainRecord.ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>the DNS domain record TTL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.DomainRecord.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DomainRecord.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the DNS domain record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="exoscale.api.dns.DomainRecord.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">content=None</em>, <em class="sig-param">priority=None</em>, <em class="sig-param">ttl=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#exoscale.api.dns.DomainRecord.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a DNS domain record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – the DNS domain record name</p></li>
+<li><p><strong>content</strong> (<em>str</em>) – the DNS domain record content</p></li>
+<li><p><strong>priority</strong> (<em>int</em>) – the DNS domain record priority</p></li>
+<li><p><strong>ttl</strong> (<em>int</em>) – the DNS domain record TTL</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exoscale.api.iam.html" class="btn btn-neutral float-right" title="exoscale.api.iam module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exoscale.api.compute.html" class="btn btn-neutral float-left" title="exoscale.api.compute module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2020, The Exoscale team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
